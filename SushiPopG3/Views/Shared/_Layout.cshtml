@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SushiPopG3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SushiPopG3.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="1" asp-action="Index">Combo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="2" asp-action="Index">Piezas</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="3" asp-action="Index">Salads</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="4" asp-action="Index">Entradas</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="5" asp-action="Index">Salsas</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="6" asp-action="Index">Bebidas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-route-categoriaId="7" asp-action="Index">Postres</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 footer-brand">
+                    <img src="~/images/logo_sin_fondo.png">
+                </div>
+                <div class="col-4">
+                    <ul class="footer-nav">
+                        <li class="mb-2">
+                            <a class="text-white">Combos</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Piezas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Salads</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Entradas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Salsas</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Bebidas</a>
+                        </li>
+                        <li>
+                            <a class="text-white">Postres</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="footer-nav">
+                        <li class="mb-2">
+                            <a class="text-white">Contacto</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Seguir Pedido</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white">Reclamos</a>
+                        </li>
+                        <li>
+                            <a class="text-white">Legales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center copyright-text">
+                    <!--&copy; 2023 - SushiPopG3 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>-->
+                    &copy; 2023 SushiPop - Desarrollo Web por Grupo 3 ORT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

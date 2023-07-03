@@ -1,0 +1,88 @@
+﻿@model SushiPopG3.Models.Pedido
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1>Create</h1>
+    <h4>Pedido</h4>
+    <hr />
+    <form asp-action="Create">
+            <input asp-for="SubTotal" value="@Model.SubTotal" type="hidden" />
+            <input asp-for="GastoEnvio" value="@Model.GastoEnvio" type="hidden" />
+            <input asp-for="CarritoId" value="@Model.CarritoId" type="hidden" />
+            <hr />
+            <div class="row">
+                <h4>Datos del Comprador</h4>
+                <div class="col-md-4">
+                    <ul class="list-group list-group-flush">
+                         <li class="list-group-item"><strong class="me-2">SubTotal</strong>@Model.SubTotal</li>
+                         <li class="list-group-item"><strong class="me-2">Gasto de Envio</strong>@Model.GastoEnvio</li>
+                         <li class="list-group-item"><strong class="me-2">Total</strong>$@(Model.SubTotal + Model.GastoEnvio) </li>
+                    </ul>
+                    <div class="form-group">
+                        <input type="submit" value="Finalizar" class="btn btn-outline-primary" />
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+<!--
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NroPedido" class="control-label"></label>
+                    <input asp-for="NroPedido" class="form-control" />
+                    <span asp-validation-for="NroPedido" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FechaCompra" class="control-label"></label>
+                    <input asp-for="FechaCompra" class="form-control" />
+                    <span asp-validation-for="FechaCompra" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTotal" class="control-label"></label>
+                    <input asp-for="SubTotal" class="form-control" />
+                    <span asp-validation-for="SubTotal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descuento" class="control-label"></label>
+                    <input asp-for="Descuento" class="form-control" />
+                    <span asp-validation-for="Descuento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GastoEnvio" class="control-label"></label>
+                    <input asp-for="GastoEnvio" class="form-control" />
+                    <span asp-validation-for="GastoEnvio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Total" class="control-label"></label>
+                    <input asp-for="Total" class="form-control" />
+                    <span asp-validation-for="Total" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <input asp-for="Estado" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                </form>
+
+
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+-->
+             
